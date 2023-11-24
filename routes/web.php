@@ -14,11 +14,17 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/', [StudentController::class, 'index']);
+Route::get('/', [StudentController::class, 'index'])->name('home');
 
 Route::get('/create', [StudentController::class, 'create']);
 Route::post('/create', [StudentController::class, 'store']);
 
-Route::get('/update/{id}', [StudentController::class, 'update']);
+Route::get('/update/{id}', [StudentController::class, 'edit']);
+Route::put('/update/{id}', [StudentController::class, 'update']);
+
+Route::delete('/delete/{id}', [StudentController::class, 'destroy']);
+
+
+
 
 
