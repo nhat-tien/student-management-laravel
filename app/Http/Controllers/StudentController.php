@@ -32,19 +32,7 @@ class StudentController extends Controller
      */
     public function store(StoreStudentRequest $request)
     {
-//        $student = new Student;
-//        $student->student_id = $request->input('student-id');
-//        $student->name = $request->input('student-name');
-//        $student->class = $request->input('student-class');
-//        $student->birth_year = $request->input('student-birth-year');
-//        $student->gender = $request->input('gender');
-//        $student->address = $request->input('student-address');
-//        $student->phone_number = $request->input('student-phone-number');
-//        $student->timestamps = false;
-//        $student->save();
-
         Student::create($request->all());
-
         return redirect()->route('home');
     }
 
